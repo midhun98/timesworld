@@ -1,16 +1,19 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <!DOCTYPE html>
 <html>
 
 <body>
     {% load crispy_forms_tags %}
     <div class="container py-5">
-        <h1>Login</h1>
+        <h1 style="color: #0069d9;">
+            </h1style>Login</h1>
         <form method="POST">
             {% csrf_token %}
             {{ login_form|crispy }}
+            <br>
             <button class="btn btn-primary" type="submit">Login</button>
         </form>
-        <p class="text-center">Don't have an account? <a href="/">Create an account</a>.</p>
+        <p class="text-left">Don't have an account? <a href="/">Create an account</a>.</p>
     </div>
 
 </body>

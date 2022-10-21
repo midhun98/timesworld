@@ -44,8 +44,8 @@ class ProfileCreateForm(forms.ModelForm):
         fields = ('role', 'country', 'mobile')
         labels = {
             'role': 'Role',
-            'country': 'country',
-            'mobile': 'mobile',
+            'country': 'Country',
+            'mobile': 'Mobile',
         }
     def clean(self):
         cleaned_data = super(ProfileCreateForm, self).clean()

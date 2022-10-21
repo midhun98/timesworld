@@ -7,9 +7,15 @@ from django import http
 from django.contrib.auth.models import User
 from django.views import generic
 from django.contrib.auth.decorators import permission_required
+from django.contrib.auth import logout
 
 def BASE(request):
     return render(request, 'base.html')
+
+
+def logout_view(request):
+    logout(request)
+    return render(request, 'logout.html')
 
 def login_request(request):
     if request.method == "POST":
