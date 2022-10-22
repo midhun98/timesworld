@@ -1,0 +1,7 @@
+*.log
+*.pot
+*.pyc
+core/migrations/
+core/__pycache__/
+timesworld/__pycache__/
+db.sqlite3

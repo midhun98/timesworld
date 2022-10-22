@@ -1,3 +1,4 @@
+import email
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render
 from . import forms, models
@@ -8,6 +9,7 @@ from django.contrib.auth.models import User
 from django.views import generic
 from django.contrib.auth.decorators import permission_required
 from django.contrib.auth import logout
+from django.contrib import messages
 
 def BASE(request):
     return render(request, 'base.html')
@@ -40,7 +42,8 @@ def login_request(request):
                         pass
                 else:
                     return http.HttpResponseRedirect(reverse('base'))
-    
+        else:
+            messages.warning(request, 'Username is not valid. Please enter a valid username and password.')
     form = AuthenticationForm()
     return render(request=request, template_name="login.html", context={"login_form": form})
 

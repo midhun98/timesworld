@@ -13,6 +13,11 @@
             <br>
             <button class="btn btn-primary" type="submit">Login</button>
         </form>
+        {% for message in messages%}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
         <p class="text-left">Don't have an account? <a href="/">Create an account</a>.</p>
     </div>
 
